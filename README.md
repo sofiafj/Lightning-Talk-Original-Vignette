@@ -1,6 +1,6 @@
 # Lightning Talk Original Vignette
 
-This repository contains an original worked vignette demonstrating basic functionality from the `quantmod` package in R.
+This repository contains an original worked vignette demonstrating basic functionality from the `quantmod` package in R. It also contains  reworked vignette used to compare the 2008 housing bubble with the current AI market.
 
 The examples show how to:
 
