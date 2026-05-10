@@ -6,9 +6,7 @@
 
 library(quantmod)
 
-# ------------------------------------------------------------
 # 1. Demonstrates getSymbols() functionality
-# ------------------------------------------------------------
 
 # Load QQQ and SPY from Yahoo Finance
 getSymbols(c("QQQ", "SPY"), src = "yahoo")
@@ -24,9 +22,7 @@ ford_ts <- getSymbols("F",
 
 str(ford_ts)
 
-# ------------------------------------------------------------
 # 2. Load data into a new environment
-# ------------------------------------------------------------
 
 data.env <- new.env()
 
@@ -34,9 +30,7 @@ getSymbols("AAPL", env = data.env, src = "yahoo")
 
 ls.str(data.env)
 
-# ------------------------------------------------------------
 # 3. Constrain object to local scope
-# ------------------------------------------------------------
 
 try(local({
   getSymbols("AAPL", src = "yahoo")
@@ -46,9 +40,7 @@ try(local({
 # AAPL does not exist in the global environment after local()
 exists("AAPL")
 
-# ------------------------------------------------------------
 # 4. Directly return data to caller
-# ------------------------------------------------------------
 
 aapl_direct <- getSymbols("AAPL",
                           src = "yahoo",
@@ -56,9 +48,7 @@ aapl_direct <- getSymbols("AAPL",
 
 str(aapl_direct)
 
-# ------------------------------------------------------------
 # 5. Draw charts based on symbols
-# ------------------------------------------------------------
 
 getSymbols("AAPL", src = "yahoo")
 
@@ -86,9 +76,7 @@ addMACD()
 chartSeries(AAPL,
             name = "Apple Stock Price with Indicators")
 
-# ------------------------------------------------------------
 # 6. Symbol return functionality
-# ------------------------------------------------------------
 
 getSymbols("QQQ", src = "yahoo")
 
@@ -104,9 +92,7 @@ periodReturn(QQQ,
 
 rm(QQQ)
 
-# ------------------------------------------------------------
 # 7. Quote return functionality
-# ------------------------------------------------------------
 
 getQuote("AAPL")
 
@@ -115,9 +101,7 @@ getQuote("QQQ;SPY;^VXN",
 
 standardQuote()
 
-# ------------------------------------------------------------
-# 8. Stock split functionality
-# ------------------------------------------------------------
+# 8. Stock splits functionality
 
 getSymbols("MSFT", src = "yahoo")
 
